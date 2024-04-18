@@ -1,5 +1,5 @@
 {
-  "name": "boletos.ts",
+  "name": "@natanb4/boletos.ts",
   "version": "1.0.6",
   "description": "Gerar boletos para vários bancos",
   "main": "lib/index.js",
@@ -34,11 +34,7 @@
     "santander",
     "sicoob"
   ],
-  "author": {
-    "name": "Luis Sobrinho",
-    "email": "ads.luis.sobrinho@gmail.com",
-    "homepage": "https://luisaltino.com.br/"
-  },
+  "author": "Luis Sobrinho <ads.luis.sobrinho@gmail.com>",
   "license": "ISC",
   "engines": {
     "node": ">=10.0.0"
@@ -56,6 +52,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natanb4/boletos.ts"
-  }
+    "url": "git+https://github.com/natanb4/boletos.ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natanb4/boletos.ts/issues"
+  },
+  "homepage": "https://github.com/natanb4/boletos.ts#readme"
 }
