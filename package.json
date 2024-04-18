@@ -1,6 +1,6 @@
 {
   "name": "@natanb4/boletos.ts",
-  "version": "1.0.6",
+  "version": "1.0.0",
   "description": "Gerar boletos para vários bancos",
   "main": "lib/index.js",
   "directories": {
@@ -52,10 +52,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natanb4/boletos.ts.git"
+    "url": "git+https://github.com/NatanB4/boletos.ts.git"
   },
   "bugs": {
-    "url": "https://github.com/natanb4/boletos.ts/issues"
+    "url": "https://github.com/NatanB4/boletos.ts/issues"
   },
-  "homepage": "https://github.com/natanb4/boletos.ts#readme"
+  "homepage": "https://github.com/NatanB4/boletos.ts#readme"
 }
