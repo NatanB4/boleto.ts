@@ -211,6 +211,9 @@ declare module 'boletos.ts' {
   interface BoletoInterface {
     numeroDocumento: string;
     especieDocumento: string;
+    especieMoeda?: string;
+    aceite?: boolean;
+    locaisDePagamentos?: string | string[];
     valor: number;
     datas: DatasInterface;
     emv?: string
@@ -339,6 +342,12 @@ declare module 'boletos.ts' {
   class Sicredi {
   }
 
+  class Safra {
+  }
+
+  class Qitech {
+  }
+
   class Bancos {
     static Itau: typeof Itau;
     static '341': typeof Itau;
@@ -356,6 +365,10 @@ declare module 'boletos.ts' {
     static '033': typeof Santander;
     static Sicredi: typeof Sicredi;
     static '748': typeof Sicredi;
+    static Safra: typeof Safra;
+    static '422': typeof Safra;
+    static Qitech: typeof Qitech;
+    static '329': typeof Qitech;
   }
 
   export {
@@ -368,5 +381,7 @@ declare module 'boletos.ts' {
     Sicoob,
     Santander,
     Sicredi,
+    Safra,
+    Qitech,
   };
 }

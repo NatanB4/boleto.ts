@@ -29,8 +29,14 @@ module.exports = {
 
 			test.ok(new bancos.Cecred());
 			test.ok(new bancos['085']());
-			console.log(Object.keys(bancos).length);
-			test.equals(16, Object.keys(bancos).length);
+
+			test.ok(new bancos.Safra());
+			test.ok(new bancos['422']());
+
+			test.ok(new bancos.Qitech());
+			test.ok(new bancos['329']());
+
+			test.equals(20, Object.keys(bancos).length);
 			test.done();
 		},
 	},
@@ -177,6 +183,23 @@ module.exports = {
 			test.done();
 		},
 
+		'Calcula corretamente o fator de vencimento após reset de 2025 (base 29/05/2022)': function(test) {
+			var datasReset = Datas.novasDatas().comVencimento('2025-02-22'),
+				boletoReset = Boleto.novoBoleto().comDatas(datasReset);
+			test.equals(boletoReset.getFatorVencimento(), '1000');
+
+			var datasAntes = Datas.novasDatas().comVencimento('2025-02-21'),
+				boletoAntes = Boleto.novoBoleto().comDatas(datasAntes);
+			test.equals(boletoAntes.getFatorVencimento(), '9999');
+
+			var datas2026 = Datas.novasDatas().comVencimento('2026-12-01'),
+				boleto2026 = Boleto.novoBoleto().comDatas(datas2026);
+			test.equals(datas2026.getVencimentoFormatado(), '01/12/2026');
+			test.equals(boleto2026.getFatorVencimento(), '1647');
+
+			test.done();
+		},
+
 		'Calcula corretamente o fator de vencimento, ignorando as horas - 1': function(test) {
 			var dataDeVencimento = new Date(2008, 5 - 1, 2, 0, 0, 0, 0),
 				datas = Datas.novasDatas().comVencimento(dataDeVencimento),
@@ -257,13 +280,13 @@ module.exports = {
 			test.done();
 		},
 
-		'Boleto não deve aceitar mais do que cinco instruções': function(test) {
+		'Boleto não deve aceitar mais do que sete instruções': function(test) {
 			test.throws(function() {
-				Boleto.novoBoleto().comInstrucoes('', '', '', '', '', '');
+				Boleto.novoBoleto().comInstrucoes('', '', '', '', '', '', '', '');
 			});
 
 			test.throws(function() {
-				Boleto.novoBoleto().comInstrucoes(['', '', '', '', '', '']);
+				Boleto.novoBoleto().comInstrucoes(['', '', '', '', '', '', '', '']);
 			});
 
 			test.done();

@@ -21,6 +21,8 @@ Geração de boletos para bancos:
 - Sicredi
 - Santander
 - Banco do Brasil
+- Safra
+- QI Tech
 
 ### Install
 

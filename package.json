@@ -1,6 +1,6 @@
 {
   "name": "@natanbarbosa2/boleto.ts",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Gerar boletos para vários bancos",
   "main": "lib/index.js",
   "directories": {
@@ -32,7 +32,9 @@
     "economica",
     "federal",
     "santander",
-    "sicoob"
+    "sicoob",
+    "safra",
+    "qitech"
   ],
   "author": "Luis Sobrinho <ads.luis.sobrinho@gmail.com>",
   "license": "ISC",
